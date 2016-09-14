@@ -53,14 +53,20 @@ App = {
   window.__twitterIntentHandler = true;
 }());
 
-var button = document.getElementById('menu-btn');
 
-button.onclick = function() {
-    var div = document.getElementById('mobile-menu');
-    if (div.style.display !== 'block') {
-        div.style.display = 'block';
-    }
-    else {
-        div.style.display = 'none';
+
+var myID = document.getElementById("sticky-nav");
+
+var myScrollFunc = function () {
+    var y = window.scrollY;
+    if (y >= 800) {
+        myID.className = "fixed show"
+    } else {
+        myID.className = "fixed hide"
     }
 };
+
+window.addEventListener("scroll", myScrollFunc);
+
+
+

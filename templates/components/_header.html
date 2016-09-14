@@ -1,4 +1,4 @@
-<header class="fixed">
+<header class="absolute">
   <div class="navigation">
     
     <a href="http://www.sfchronicle.com" target="_blank">
@@ -7,14 +7,6 @@
         </div>
     </a>
 
-    <div class="link">
-      <a class="special-head" href="{{ url_for('index') }}">{{config.PROJ_TITLE}}</a>
-    </div>
-
-
-    <div id="menu-btn" class="link menu-btn hide-for-medium">
-      <button class="menu-icon" type="button" data-toggle></button>
-    </div>
 
     <div class="link social">
       <a id="mail-icon" title="Share via email" href="mailto:?subject={{title|urlencode}}&body={{description|urlencode}}%0A%0Ahttp%3A%2F%2Fprojects.sfchronicle.com%2F2016%2F{{config.PATH}}%2F{% if slug %}{{slug}}%2F{% endif %}">
@@ -38,16 +30,3 @@
   
   </div>
 </header>
-
-
-<div id="mobile-menu" class="mobile-menu">
-
-<ul class="menu vertical">
-  <li><a href="{{ url_for('index') }}">{{slug}}</a></li>
-  <li><a href="{{ url_for('index') }}">{{slug}}</a></li>
-  <li><a href="{{ url_for('index') }}">{{slug}}</a></li>
-  <li><a href="{{ url_for('index') }}">{{slug}}</a></li>
-  <li><a href="{{ url_for('index') }}">{{slug}}</a></li>
-</ul>
-
-</div>

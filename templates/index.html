@@ -6,26 +6,75 @@
 {% include 'components/_social.html' %}
 {% endblock %}
 
-{% block hearst_title %}{% endblock %}
-{% block hearst_class %}{% endblock %}
-{% block author %}{% endblock %}
+{% block hearst_title %}{{title|safe}}{% endblock %}
 
 {% block content %}
 <main class="container">
-  <div class="row">
-    <div class="large-8 large-offset-2 columns">
-    
-    {% include 'components/_text.html' %}
 
-    </div>
-  </div>
+	{% include 'components/_header.html' %}
+	{% include 'components/_header-sticky.html' %}
+
+	<div class="title-container">
+		<div class="background-img">
+		<video id="looper" class="show-for-large">
+		  <source src="/static/video/looper.mp4" type="video/mp4" poster="/static/img/still.jpg">
+		  Your browser does not support the <code>video</code> element.
+		</video>
+		<img id="mobile-img" class="hide-for-large" src="/static/img/still.jpg">
+		<p class="caption landing">Antioch High School running back Najee Harris heads for the locker room after a practice this month.<span class="byline"> Michael Macor, The Chronicle</span></p>
+			<div class="over-img">
+				<h1 class="title">Captive<br>Lives</h1>
+				<p class="deck">
+				Some 10 million children in the U.S. have parents who have been incarcerated. These innocent youngsters, studies show, face long odds of success in life. But slowly, efforts to help them are growing.
+				</p>
+				<p class="author">By <a href="mailto:jtucker@sfchronicle.com">Jill Tucker</a></p>
+			</div>
+		</div>
+	</div>
+
+	{% include 'components/_text.html' %}
+
+	<p id="endnote">This report grew out of a fellowship from John Jay College of Criminal Justice and the Solutions Journalism Network on strengthening reporting on solutions to violence in America. More reporting from this effort can be found at <a href="http://thecrimereport.org" target="_blank">http://thecrimereport.org</a>.</p>
+
+	<div class="max">
+		<div class="credits">
+			{% import 'components/_credits.html' as credit %}
+			<!-- Variables are name, email slug and twitter handle -->
+			<div class="group">
+				<p>Reporter</p><a href="mailto:jtucker@sfchronicle.com">Jill Tucker</a>
+			</div>
+			<div class="group">
+				<p>Photographer</p>
+				<a href="">Lea Suzuki</a>
+			</div>
+			<div class="group">
+				<p>Graphic Designer</p>
+				<div class="entry">
+					<a href="mailto:jblanchard@sfchronicle.com">Todd Trumbull</a>
+				</div>
+			</div>
+			<div class="group">
+				<p>Interactive Producer</p>
+				<a href="mailto:lvilla@sfchronicle.com">Lucio Villa</a>
+			</div>
+		</div>
+	</div>
+
+		{% include 'components/_footer.html' %}
+
+
 </main>
 {% endblock %}
 
 {% block javascript %}
-<script>
+
+<script type="text/javascript">
+
   $(document).ready(function() {
-    App.init();
-  });
+		App.init();
+		$("#looper").get(0).play();
+	});
+ 
 </script>
+
 {% endblock %}
