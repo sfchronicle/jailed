@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block head %}
+{% include 'components/_social.html' %}
+{% endblock %}
+
+{% block hearst_title %}{{title|safe}}{% endblock %}
+{% block hearst_class %}article{% endblock %}
+
+{% block content %}
+<main class="container">
+
+	{% include 'components/_header.html' %}
+	{% include 'components/_header-sticky.html' %}
+
+	<div class="title-container">
+		<div class="background-img overview visits">
+		<div class="dim"></div>
+			<div class="over-img">
+				<img class="visits-mobile-img" src="http://ww1.hdnux.com/photos/51/21/44/10925877/5/900x0.jpg">
+				<p class="caption landing visits-mobile-img">An inmate at County Jail No. 5 gazes at his son as he cradles him in his arms during a One Family visit in San Francisco.<span class="byline"> Leah Suzuki , The Chronicle</span></p>
+				<p class="category margin-auto">Special Report</p>
+				<h1 class="title bonding">Bonding Behind Bars</h1>
+				<p class="date margin-auto">Sept. 16, 2016</p>
+				<p class="deck bonding">Captive Lives: While many jails reduce or eliminate in-person visits, San Francisco’s works to bring inmates and their children together.</p>
+				<p class="author margin-auto">By <a href="mailto:jtucker@sfchronicle.com">Jill Tucker</a></p>
+			</div>
+		</div>
+		<p class="caption landing visits-img">An inmate at County Jail No. 5 gazes at his son as he cradles him in his arms during a One Family visit in San Francisco.<span class="byline"> Leah Suzuki , The Chronicle</span></p>
+	</div>
+
+	{% include 'components/_visits.html' %}
+
+	<p id="endnote">This report grew out of a fellowship from John Jay College of Criminal Justice and the Solutions Journalism Network on strengthening reporting on solutions to violence in America. More reporting from this effort can be found at <a href="http://thecrimereport.org" target="_blank">http://thecrimereport.org</a>.</p>
+
+	<div class="max">
+		<div class="credits">
+			{% import 'components/_credits.html' as credit %}
+			<!-- Variables are name, email slug and twitter handle -->
+			<div class="group">
+				<p>Reporter</p><a href="mailto:jtucker@sfchronicle.com">Jill Tucker</a>
+			</div>
+			<div class="group">
+				<p>Photographer / Videographer</p>
+				<a href="mailto:lsuzuki@sfchronicle.com">Leah Suzuki</a>
+			</div>
+			<div class="group">
+				<p>Graphic Designer</p>
+				<div class="entry">
+					<a href="mailto:ttrumbull@sfchronicle.com">Todd Trumbull</a>
+				</div>
+			</div>
+			<div class="group">
+				<p>Interactive Producer</p>
+				<a href="mailto:lvilla@sfchronicle.com">Lucio Villa</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="max">
+	  <hr>
+	  <div class="dont-miss-related">
+
+	    {% import 'components/_relatedstories.html' as story %}
+
+	    	{{ story.info('Beyond Homelessness', 'http://projects.sfchronicle.com/sf-homeless/', 'http://projects.sfchronicle.com/sf-homeless/static/images/social.jpg' ) }}
+	    	{{ story.info('Chronicle Investigation: Airbnb and rivals thrive', 'http://projects.sfchronicle.com/2016/airbnb/', 'http://projects.sfchronicle.com/2016/airbnb/static/images/social.jpg' ) }}
+	    	{{ story.info('Rising Reality', 'http://projects.sfchronicle.com/2016/sea-level-rise/', 'http://projects.sfchronicle.com/2016/sea-level-rise/assets/photos/treasureisland/social.jpg' ) }}
+	    	{{ story.info('H-1B Visas', 'http://projects.sfchronicle.com/2016/visas/', 'http://projects.sfchronicle.com/2016/visas/assets/sharing_bubbles_v2.png' ) }}
+
+
+	  </div>
+	</div>
+
+
+		{% include 'components/_footer.html' %}
+
+
+</main>
+{% endblock %}
+
+{% block javascript %}
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+		App.init();
+	});
+ 
+</script>
+
+{% endblock %}

@@ -543,17 +543,17 @@ footer {
   }
 
   a {
-    color:$link;
+    color:#6C85A5;
     text-transform:uppercase;
   }
 
   .story {
-    width: 100%;
-    text-align: center;
-    min-height: 300px;
-    background-size: cover;
-    position: relative;
-    background-position: top;
+
+  width: 100%;
+  text-align: center;
+  min-height: 300px;
+  background-size: cover;
+  position: relative;
 
     a {
         text-decoration: none;
@@ -565,8 +565,35 @@ footer {
   .padded {
     padding: 10px;
   }
-}
+  .next-story {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    color: #fff;
+    z-index:3;
+    font-size:2em;
+    font-family:$serif-bold;
+    text-transform: none;
+    line-height: 1.2;
+    padding: 0 15px;
+    margin: 0 auto;
 
+    p{
+      max-width: 750px;
+    }
+
+    @media #{$mobile} {
+      font-size:1.8em;
+      top:30%;
+    }
+
+
+  }
+  img {
+    width: 100%;
+  }
+}
 
 
 
@@ -670,3 +697,5 @@ td {
   font-family: $sans-serif;
   margin-bottom: 2em;
 }
+
+.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }

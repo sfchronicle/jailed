@@ -8,7 +8,10 @@
     </a>
 
     <div class="link">
-      <a class="special-head" href="{{ url_for('index') }}">Captive Lives</a>
+      <a class="special-head {%- if request.path == '/' %} active{% endif %}" href="{{ url_for('index') }}">Captive Lives</a>
+    </div>
+    <div class="link">
+      <a class="special-head {%- if request.path == '/visits/' %} active{% endif %}" href="{{ url_for('visits') }}">Visits</a>
     </div>
 
 
@@ -25,7 +28,7 @@
     </div>
     
     <div class="link social">
-      <a id="twitter-icon" title="Share on Twitter" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2F{{config.PATH}}{% if slug %}{{slug}}%2F{% endif %}&text={{twitter_text|urlencode}}&hashtags={{config.HASHTAG}}">
+      <a id="twitter-icon" title="Share on Twitter" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2F{{config.PATH}}%2F{% if slug %}{{slug}}%2F{% endif %}&text={{twitter_text|urlencode}}&hashtags={{config.HASHTAG}}">
         <i class="fa fa-twitter"></i>
       </a>
     </div>
