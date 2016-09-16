@@ -16,12 +16,12 @@
 
 	<div class="title-container">
 		<div class="background-img">
-		<video id="looper" class="show-for-large">
-		  <source src="{{ url_for('static', filename='video/looper.mp4') }}" type="video/mp4" poster="{{ url_for('static', filename='img/still.jpg') }}">
+		<video id="looper" class="show-for-large" poster="{{ url_for('static', filename='img/still.jpg') }}">
+		  <source src="{{ url_for('static', filename='video/looper.mp4') }}" type="video/mp4"">
 		  Your browser does not support the <code>video</code> element.
 		</video>
-		<img id="mobile-img" class="hide-for-large" src="/static/img/still.jpg">
-		<p class="caption landing">Luna Garcia of San Francisco flips through childhood photos that show her visiting her father, Jose Garcia, at San Quentin State Prison.<span class="byline">  Leah Suzuki, The Chronicle</span></p>
+		<img id="mobile-img" class="hide-for-large" src="{{ url_for('static', filename='img/still.jpg') }}">
+		<p class="caption landing">Luna Garcia of San Francisco flips through childhood photos that show her visiting her father, Jose Garcia, at San Quentin State Prison.<span class="byline">  Lea Suzuki, The Chronicle</span></p>
 			<div class="over-img">
 				<p class="category">Special Report</p>
 				<h1 class="title">Captive<br>Lives</h1>
@@ -37,12 +37,38 @@
 
 	{% include 'components/_text.html' %}
 
+	<p id="endnote">This report grew out of a fellowship from John Jay College of Criminal Justice and the Solutions Journalism Network on strengthening reporting on solutions to violence in America. More reporting from this effort can be found at <a href="http://thecrimereport.org" target="_blank">http://thecrimereport.org</a>.</p>
+
+	<div class="max">
+		<div class="credits">
+			{% import 'components/_credits.html' as credit %}
+			<!-- Variables are name, email slug and twitter handle -->
+			<div class="group">
+				<p>Reporter</p><a href="mailto:jtucker@sfchronicle.com">Jill Tucker</a>
+			</div>
+			<div class="group">
+				<p>Photographer / Videographer</p>
+				<a href="mailto:lsuzuki@sfchronicle.com">Lea Suzuki</a>
+			</div>
+			<div class="group">
+				<p>Graphic Designer</p>
+				<div class="entry">
+					<a href="mailto:ttrumbull@sfchronicle.com">Todd Trumbull</a>
+				</div>
+			</div>
+			<div class="group">
+				<p>Interactive Producer</p>
+				<a href="mailto:lvilla@sfchronicle.com">Lucio Villa</a>
+			</div>
+		</div>
+	</div>
+
 	<div class="dont-miss">
 		<a href="{{ url_for('visits') }}">
 			<button>Bonding Behind Bars</button>
 			<div class="story visits">
 				<div class="next-story">
-					<p>Children, dads get close in family visits at SF jail in San Bruno</p>
+					<p>San Francisco jails help bring inmates, children together</p>
 				</div>
 				<div class="dim"></div>
 			</div>

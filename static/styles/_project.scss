@@ -303,6 +303,19 @@ p {
 }
 .link{
   float:left;
+
+  &.vs{
+    @media (max-width:480px){
+      padding: 9px 9px 0 0;
+      font-size: 12px;
+    }
+  }
+  &.cl{
+    @media (max-width:480px){
+      padding: 9px 9px 0 0;
+      font-size: 12px;
+    }
+  }
 }
 
 .hide {
